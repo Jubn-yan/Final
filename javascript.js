@@ -43,5 +43,26 @@
       }
     },5) }
    
- 
+    playBox.onmousemove = function() {
+        var e = event || window.event; 
+        boardLeft = event.pageX - playBox.offsetLeft -50;
+        boardTop = event.pageY - playBox.offsetTop;  
+        
+        if(boardLeft>=0 && boardLeft<=400) {
+          board.style.left = boardLeft + "px";
+          if(flag) {
+            ballLeft = boardLeft + 45;
+            ball.style.left = ballLeft + "px";
+          }  
+        }  
+        if(boardTop>=0 && boardTop<=390){
+          board.style.top =  boardTop + "px";
+          if(flag) {
+            ballTop = boardTop - 15;
+            ball.style.top = ballTop +"px";
+          }
+       } 
+       
+      }
+         
  
